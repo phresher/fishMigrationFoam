@@ -1,0 +1,2 @@
+wmake lib/fishAgent
+wmake solver/fishMigrationFoam
