@@ -1,0 +1,5 @@
+fishAgent.C
+fishAgentIO.C
+fishAgentCloud.C
+
+LIB = $(FOAM_USER_LIBBIN)/libfishAgent
