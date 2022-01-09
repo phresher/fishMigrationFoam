@@ -1,4 +1,3 @@
 #!/bin/bash
-
 wclean lib/fishAgent
 wclean solver/fishMigrationFoam
