@@ -10,11 +10,13 @@ FoamFile
     version     2.0;
     format      ascii;
     class       volVectorField;
+    location    "0";
     object      U;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 dimensions      [0 1 -1 0 0 0 0];
+
 
 internalField   uniform (0.013 0 0);
 
@@ -24,24 +26,27 @@ boundaryField
     {
         type            flowRateInletVelocity;
         volumetricFlowRate constant 0.026;
+        extrapolateProfile false;
+        value           uniform (0 0 0.052);
     }
-
     walls
     {
         type            noSlip;
     }
-
+    outlet
+    {
+        type            inletOutlet;
+        inletValue      uniform (0 0 0);
+        value           uniform (0.013 0 0);
+    }
     atmosphere
     {
         type            pressureInletOutletVelocity;
         value           uniform (0 0 0);
     }
-
-    outlet
+    "baffle.*"
     {
-        type            inletOutlet;
-	inletValue      uniform (0 0 0);
-        value           $internalField;
+        type            noSlip;
     }
 }
 

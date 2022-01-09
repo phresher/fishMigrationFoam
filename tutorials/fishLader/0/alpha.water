@@ -9,29 +9,43 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       dictionary;
-    object      extrudeProperties;
+    class       volScalarField;
+    location    "0";
+    object      alpha.water.orig;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-constructFrom   mesh;
-sourceCase      "<case>";
-sourcePatches   (outlet);
+dimensions      [0 0 0 0 0 0 0];
 
-flipNormals     false;
 
-extrudeModel    linearDirection;
+internalField   uniform 0;
 
-nLayers             1400;
-expansionRatio      1.0;
-
-linearDirectionCoeffs
+boundaryField
 {
-    axisPt          (0 0 0);
-    direction       (1 0 0);
-    thickness       7;
+    inlet
+    {
+        type            fixedValue;
+        value           uniform 1;
+    }
+    walls
+    {
+        type            zeroGradient;
+    }
+    outlet
+    {
+        type            zeroGradient;
+    }
+    atmosphere
+    {
+        type            inletOutlet;
+        inletValue      uniform 0;
+        value           uniform 0;
+    }
+    "baffle.*"
+    {
+        type            zeroGradient;
+    }
 }
 
-mergeFaces      false;
 
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+// ************************************************************************* //

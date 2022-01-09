@@ -79,7 +79,7 @@ bool Foam::fishAgent::move
 
         scalar Dc = (24.0*nuc/d_)*ReFunc*(3.0/4.0)*(rhoc/(d_*rhop));
 
-        U_ = (U_ + dt*(Dc*Uc + (1.0 - rhoc/rhop)*td.g()))/(1.0 + dt*Dc);
+        U_ = (U_ + dt*(-1.0*Dc*Uc + (1.0 - rhoc/rhop)*td.g()))/(1.0 + dt*Dc);
     }
 
     return td.keepParticle;

@@ -6,4 +6,7 @@ runApplication blockMesh
 
 runApplication extrudeMesh
 
+runApplication createBaffles -overwrite
+
+touch lader.foam
 #------------------------------------------------------------------------------
