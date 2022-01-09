@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wmake lib/fishAgent
+wmake solver/fishMigrationFoam
