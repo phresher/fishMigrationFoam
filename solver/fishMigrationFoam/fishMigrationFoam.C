@@ -30,7 +30,7 @@ Group
 Description
     Solver for two incompressible, isothermal immiscible fluids using a VOF
     (volume of fluid) phase-fraction based interface capturing approach,
-    with lagrangian agent-base fish migration method.
+    with lagrangian agent-based fish migration method.
 
 \*---------------------------------------------------------------------------*/
 
@@ -56,9 +56,8 @@ int main(int argc, char *argv[])
     argList::addNote
     (
         "Solver for two incompressible, isothermal immiscible fluids"
-        " using VOF phase-fraction based interface capturing.\n"
-        "With optional mesh motion and mesh topology changes including"
-        " adaptive re-meshing."
+        " using VOF phase-fraction based interface capturing\n"
+        "with lagrangian agent-based fish migration method. \n"
     );
 
     #include "postProcess.H"

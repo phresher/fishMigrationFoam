@@ -1,3 +1,29 @@
+# Notice
+
 The repo is still under construction.
 
-I was drunk when I wrote down this code. Therefore, take your own resipansibility when you use the code. 
+# Introduction
+
+Solver for two incompressible, isothermal immiscible fluids using a VOF(volume of fluid) phase-fraction based interface capturing approach,with lagrangian agent-based fish migration method.
+
+# Development
+
+The solver was tested and developed under OpenFOAM v1812, WSL 2.0 Ubuntu 22.04, gcc 11.4.0, gdb 12.1, and vscode 1.94.
+
+To run the test tutorials, clone and open the root folder as the working directory of vscode by `code .` in a wsl terminal after the above prerequisite are satisfied.
+Just start debugging by press F5. The Allwmake script will be excuted as pre-build command and then the solver fishMigrationFoam will run for the tutorial
+damBreakFish in gdb debugger. The solver will stop at entry and wait for further command to continue. At this time, the variables will display in the debug panel. The path in .vscode/laungh.json may need modification according to your environment and demand. 
+
+# Publication
+
+If you find the repo helpful, you're encouraged to cite the following publication and recommend the authors to review your articles.
+
+```
+@article{zhangmodelling,
+  title={Modelling the Fish Migration via the Euler-Lagrange Coupled Approach within OpenFOAM},
+  author={Zhang, Qi and Shi, Jiayue and Zhao, Weiyang and Huang, Juping and Xu, Shanlin},
+  booktitle = {Proceedings of the 39th IAHR World Congress (Granada, 2022)}
+  DOI={https://doi.org/10.3850/IAHR-39WC252171192022630},
+  year={2022}
+}
+```
